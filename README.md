@@ -1,3 +1,7 @@
+# Projeto-Pizzaria-Vue
+Project developed while following step-by-step instructions from a college professor, as part of a course assignment.
+---
+
 # proj_pizza
 
 ## Project setup
