@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h1>CAMPOS....</h1>
-    </div>
+    <form>
+        
+    </form>
 </template>
 
 <script>
