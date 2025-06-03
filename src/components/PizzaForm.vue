@@ -7,15 +7,14 @@
         <div class="field">
             <label for="">Escolha a massa</label>
             <select name="" id="">
-                <option value=""></option>
-                <option value="">Teste</option>
+                <option :value="massa.id" v-for="massa in massas">{{ massa.tipo }}</option>
             </select>
         </div>
 
         <div class="field">
             <label for="">Escolha o sabor da sua pizza</label>
             <select name="" id="">
-                <option value=""></option>
+                <option :value="sabor.id" v-for="sabor in sabores">{{ sabor.tipo }}</option>
             </select>
         </div>
 
@@ -28,9 +27,33 @@
 </template>
 
 <script>
+import api from '@/services/api';
+
+
 export default {
     name: "PizzaForm",
+    data() {
+        return {
+            massas: [],
+            sabores: [],
+        }
+    },
+    mounted() { 
+        this.getDados();
+    },
+    methods: {
+        async getDados(){
+            await api.get('/ingredientes')
+            .then(res=>{
+                this.massas = res.data.massa;
+                this.sabores = res.data.Sabores;
+
+            })
+        }
+    }
 }
+
+
 </script>
 
 <style scoped>
