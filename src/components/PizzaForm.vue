@@ -20,7 +20,12 @@
 
         <div class="field">
             <label for="">Selecione os opcionais:</label>
-            <input class="checkbox" type="checkbox" name="" id=""> <p class="checklabel">Borda de catupiry</p>
+
+            <template v-for="opcional in opcionais">
+                <div class="field">
+                    <input class="checkbox" type="checkbox" :value="opcional.id"> <p class="checklabel">{{ opcional.tipo }}</p>
+                </div>
+            </template>
         </div>
 
     </form>
@@ -36,6 +41,7 @@ export default {
         return {
             massas: [],
             sabores: [],
+            opcionais: [],
         }
     },
     mounted() { 
@@ -47,6 +53,7 @@ export default {
             .then(res=>{
                 this.massas = res.data.massa;
                 this.sabores = res.data.Sabores;
+                this.opcionais = res.data.opcionais;
 
             })
         }
