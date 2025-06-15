@@ -20,12 +20,11 @@
 
         <div class="field">
             <label for="">Selecione os opcionais:</label>
-
-            <template v-for="opcional in opcionais">
-                <div class="field">
-                    <input class="checkbox" type="checkbox" :value="opcional.id"> <p class="checklabel">{{ opcional.tipo }}</p>
-                </div>
-            </template>
+                <template v-for="opcional in opcionais">
+                    <div class="field">
+                        <input class="radio" name="opcionais" type="radio" :value="opcional.id"> <p class="radiolabel">{{ opcional.tipo }}</p>
+                    </div>
+                </template>
         </div>
 
     </form>
@@ -69,7 +68,7 @@ export default {
         text-align: start;
     }
 
-    p.checklabel {
+    p.radiolabel {
         display: inline;
         font-weight: bold;
     }
@@ -90,7 +89,7 @@ export default {
         width: 100%;
     }
 
-    input.checkbox {
+    input.radio {
         margin: 12px 0px;
     }
     
