@@ -41,6 +41,7 @@ export default {
             massas: [],
             sabores: [],
             opcionais: [],
+            URL: process.env.VUE_APP_URL,
         }
     },
     mounted() { 
